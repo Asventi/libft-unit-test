@@ -469,9 +469,9 @@ void			test_ft_memcpy_double_null1(void *ptr) {
 
 void			test_ft_memcpy_double_null2(void *ptr) {
 	typeof(memcpy)	*ft_memcpy = ptr;
-	SET_EXPLANATION("your memcpy does not behave well with NULL as both params with size");
+	SET_EXPLANATION("your memcpy should segv with NULL as both params with size");
 
-	SANDBOX_RAISE(
+	SANDBOX_IRAISE(
 			ft_memcpy(NULL, NULL, 3);
 			);
 }
@@ -714,9 +714,9 @@ void			test_ft_memmove_double_null1(void *ptr) {
 
 void			test_ft_memmove_double_null2(void *ptr) {
 	typeof(memmove)		*ft_memmove = ptr;
-	SET_EXPLANATION("your memmove does not well with NULL as both parameters and size");
+	SET_EXPLANATION("your memmove should segv with NULL as both parameters and size");
 
-	SANDBOX_RAISE(
+	SANDBOX_IRAISE(
 			ft_memmove(NULL, NULL, 5);
 			);
 }
